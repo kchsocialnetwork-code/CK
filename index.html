@@ -1,7 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+}
+
+/* ================= INTRO ================= */
+
 #intro {
   height: 100vh;
   background-color: black;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +37,170 @@
   opacity: 0.6;
 }
 
-/* actual image (FULL visible, no crop) */
+/* main content */
 #introContent {
   position: relative;
   z-index: 1;
+  max-width: 600px;
 }
 
+/* full visible image */
 #introContent img {
   max-height: 80vh;
   max-width: 90vw;
   object-fit: contain;
 }
+
+#intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 26px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ================= LETTER PAGE ================= */
+
+#letterPage {
+  display: none;
+  min-height: 100vh;
+  background-color: #111;
+  position: relative;
+}
+
+/* blurred background fill */
+#letterPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('bg.png') center/cover no-repeat;
+  filter: blur(12px);
+  opacity: 0.5;
+}
+
+/* full image visible */
+#letterPage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('bg.png') center/contain no-repeat;
+  opacity: 0.35;
+}
+
+/* ================= LETTER ================= */
+
+.letter {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: auto;
+  padding: 60px 20px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #222;
+  background: rgba(255,255,255,0.85);
+  border-radius: 6px;
+}
+
+.letter p {
+  margin-bottom: 14px;
+}
+
+.signature {
+  margin-top: 30px;
+  text-align: right;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div id="introContent">
+
+    <img src="heart.png" alt="heart">
+
+    <h1>This is for you… a quiet way of saying what I feel.</h1>
+    <button onclick="openLetter()">Read</button>
+
+  </div>
+</div>
+
+<!-- LETTER -->
+<div id="letterPage">
+
+<div class="letter">
+
+<p>This is for you… a quiet way of saying what I feel.</p>
+
+<p>Oye...</p>
+
+<p>
+Nanna aaaa!!! The word, the emotion it carries... I never thought in my life I would call someone nanna (that too after my father).
+Thank you for allowing me to call you nanna.
+</p>
+
+<p>
+You made me feel this just by existing in my life. Unknowingly, I called you, but later I realized the way you are sometimes,
+your gestures reminded me of him.
+I know I quietly look for my father's love in my man. But you even made me feel like him. I'm always blessed for that.
+</p>
+
+<p>
+I just want to write this letter to remind you how much you mean to me and how deeply I’ve fallen for you!
+</p>
+
+<p>Because you know why?</p>
+
+<p>
+I want you to feel that your birth has a meaning... and that meaning is me.
+</p>
+
+<p>
+And then... You came... Nuvvu vachav raa...
+</p>
+
+<p>
+Honestly... I’m scared of the love I have for you.
+</p>
+
+<p>
+Nuvvu undu kanna natho... naku inkem odhu...
+</p>
+
+<p>
+You’re not just someone in my life,
+you’re the one I want to end up with...
+</p>
+
+<p>
+And lastly,
+Many many happy returns of the day Kannayya ❤️😘
+</p>
+
+<div class="signature">— Yours ❤️</div>
+
+</div>
+
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("letterPage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
