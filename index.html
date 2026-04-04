@@ -14,47 +14,39 @@ body {
   font-family: 'Libre Baskerville', serif;
 }
 
-/* FULL SCREEN INTRO */
+/* INTRO SCREEN */
 #intro {
   height: 100vh;
-  background: url('heart.png') center/cover no-repeat;
+  background: url('heart.png') center/contain no-repeat;
+  background-color: black;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
-}
-
-/* overlay for readability */
-#intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
+  color: white;
 }
 
 #introContent {
-  position: relative;
-  z-index: 1;
+  max-width: 600px;
 }
 
 #intro h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
 }
 
 button {
   margin-top: 20px;
-  padding: 10px 28px;
+  padding: 10px 26px;
   border: 1px solid #fff;
   background: transparent;
   color: white;
   cursor: pointer;
+  font-size: 14px;
 }
 
-/* LETTER FULL SCREEN */
+/* LETTER PAGE */
 #letterPage {
   display: none;
   min-height: 100vh;
@@ -62,24 +54,24 @@ button {
   position: relative;
 }
 
-/* overlay for letter readability */
+/* overlay (balanced visibility) */
 #letterPage::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 248, 240, 0.92); /* stronger than before */
+  background: rgba(255,255,255,0.75);
 }
 
 /* LETTER CONTENT */
 .letter {
   position: relative;
   z-index: 1;
-  max-width: 750px;
+  max-width: 720px;
   margin: auto;
-  padding: 60px 25px;
-  font-size: 16px;
+  padding: 60px 20px;
+  font-size: 15px;
   line-height: 1.8;
-  color: #2b2b2b;
+  color: #222;
 }
 
 .letter p {
@@ -96,7 +88,7 @@ button {
 
 <body>
 
-<!-- INTRO SCREEN -->
+<!-- INTRO -->
 <div id="intro">
   <div id="introContent">
     <h1>This is for you… a quiet way of saying what I feel.</h1>
@@ -104,7 +96,7 @@ button {
   </div>
 </div>
 
-<!-- LETTER PAGE -->
+<!-- LETTER -->
 <div id="letterPage">
 
 <div class="letter">
