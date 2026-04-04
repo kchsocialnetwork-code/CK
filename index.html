@@ -12,52 +12,37 @@
 body {
   margin: 0;
   font-family: 'Libre Baskerville', serif;
+  background-color: #000;
 }
 
 /* ================= INTRO ================= */
 
 #intro {
   height: 100vh;
-  background-color: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: white;
-  position: relative;
+  text-align: center;
 }
 
-/* blurred full background */
-#intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('heart.png') center/cover no-repeat;
-  filter: blur(20px);
-  opacity: 0.6;
+/* SINGLE CLEAN IMAGE */
+#intro img {
+  max-height: 75vh;
+  width: auto;
+  display: block;
 }
 
-/* main content */
-#introContent {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-}
-
-/* full visible image */
-#introContent img {
-  max-height: 80vh;
-  max-width: 90vw;
-  object-fit: contain;
-}
-
+/* TEXT */
 #intro h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 22px;
   margin-top: 20px;
+  font-weight: 400;
 }
 
+/* BUTTON */
 button {
   margin-top: 15px;
   padding: 10px 26px;
@@ -73,42 +58,20 @@ button {
 #letterPage {
   display: none;
   min-height: 100vh;
-  background-color: #111;
-  position: relative;
-}
-
-/* blurred background fill */
-#letterPage::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('bg.png') center/cover no-repeat;
-  filter: blur(12px);
-  opacity: 0.5;
-}
-
-/* full image visible */
-#letterPage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   background: url('bg.png') center/contain no-repeat;
-  opacity: 0.35;
+  background-color: #111;
+  padding: 40px 0;
 }
 
-/* ================= LETTER ================= */
-
+/* LETTER BOX */
 .letter {
-  position: relative;
-  z-index: 1;
   max-width: 680px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
   font-size: 15px;
   line-height: 1.8;
   color: #222;
-  background: rgba(255,255,255,0.85);
-  border-radius: 6px;
+  background: rgba(255,255,255,0.9);
 }
 
 .letter p {
@@ -127,14 +90,13 @@ button {
 
 <!-- INTRO -->
 <div id="intro">
-  <div id="introContent">
 
-    <img src="heart.png" alt="heart">
+  <img src="heart.png" alt="heart">
 
-    <h1>This is for you… a quiet way of saying what I feel.</h1>
-    <button onclick="openLetter()">Read</button>
+  <h1>This is for you… a quiet way of saying what I feel.</h1>
 
-  </div>
+  <button onclick="openLetter()">Read</button>
+
 </div>
 
 <!-- LETTER -->
@@ -154,21 +116,14 @@ Thank you for allowing me to call you nanna.
 <p>
 You made me feel this just by existing in my life. Unknowingly, I called you, but later I realized the way you are sometimes,
 your gestures reminded me of him.
-I know I quietly look for my father's love in my man. But you even made me feel like him. I'm always blessed for that.
 </p>
 
 <p>
 I just want to write this letter to remind you how much you mean to me and how deeply I’ve fallen for you!
 </p>
 
-<p>Because you know why?</p>
-
 <p>
-I want you to feel that your birth has a meaning... and that meaning is me.
-</p>
-
-<p>
-And then... You came... Nuvvu vachav raa...
+And then... You came...
 </p>
 
 <p>
@@ -180,13 +135,11 @@ Nuvvu undu kanna natho... naku inkem odhu...
 </p>
 
 <p>
-You’re not just someone in my life,
-you’re the one I want to end up with...
+You’re the one I want to end up with...
 </p>
 
 <p>
-And lastly,
-Many many happy returns of the day Kannayya ❤️😘
+Many happy returns of the day ❤️
 </p>
 
 <div class="signature">— Yours ❤️</div>
