@@ -12,13 +12,13 @@
 body {
   margin: 0;
   font-family: 'Libre Baskerville', serif;
-  background-color: #000;
 }
 
 /* ================= INTRO ================= */
 
 #intro {
   height: 100vh;
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,22 +27,16 @@ body {
   text-align: center;
 }
 
-/* SINGLE CLEAN IMAGE */
 #intro img {
   max-height: 75vh;
-  width: auto;
-  display: block;
 }
 
-/* TEXT */
 #intro h1 {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   margin-top: 20px;
-  font-weight: 400;
 }
 
-/* BUTTON */
 button {
   margin-top: 15px;
   padding: 10px 26px;
@@ -50,7 +44,6 @@ button {
   background: transparent;
   color: white;
   cursor: pointer;
-  font-size: 14px;
 }
 
 /* ================= LETTER PAGE ================= */
@@ -58,24 +51,38 @@ button {
 #letterPage {
   display: none;
   min-height: 100vh;
-  background: url('bg.png') center/contain no-repeat;
-  background-color: #111;
-  padding: 40px 0;
+
+  /* 🔥 KEY FIX — SHIFT IMAGE UP */
+  background: url('bg.png') center 20% / cover no-repeat;
+
+  position: relative;
 }
 
-/* LETTER BOX */
+/* 🔥 OVERLAY FOR READABILITY */
+#letterPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+}
+
+/* ================= LETTER TEXT ================= */
+
 .letter {
-  max-width: 680px;
+  position: relative;
+  z-index: 1;
+
+  max-width: 720px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
+
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.9;
   color: #222;
-  background: rgba(255,255,255,0.9);
 }
 
 .letter p {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .signature {
@@ -99,7 +106,7 @@ button {
 
 </div>
 
-<!-- LETTER -->
+<!-- LETTER PAGE -->
 <div id="letterPage">
 
 <div class="letter">
@@ -115,7 +122,7 @@ Thank you for allowing me to call you nanna.
 
 <p>
 You made me feel this just by existing in my life. Unknowingly, I called you, but later I realized the way you are sometimes,
-your gestures reminded me of him.
+your gestures reminded me of him. I know I quietly look for my father's love in my man.
 </p>
 
 <p>
@@ -123,7 +130,15 @@ I just want to write this letter to remind you how much you mean to me and how d
 </p>
 
 <p>
-And then... You came...
+Because you know why?
+</p>
+
+<p>
+I want you to feel that your birth has a meaning... and that meaning is me.
+</p>
+
+<p>
+And then... You came... Nuvvu vachav raa...
 </p>
 
 <p>
@@ -135,11 +150,11 @@ Nuvvu undu kanna natho... naku inkem odhu...
 </p>
 
 <p>
-You’re the one I want to end up with...
+You’re not just someone in my life, you’re the one I want to end up with...
 </p>
 
 <p>
-Many happy returns of the day ❤️
+Many many happy returns of the day Kannayya ❤️😘
 </p>
 
 <div class="signature">— Yours ❤️</div>
